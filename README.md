@@ -8,6 +8,7 @@ cookiecutter https://github.com/ignacioheredia/cookiecutter-minimal-pypackage.gi
 ```    
 
 **Post-generation actions:**
+* run `git init` to make the package installable via `pip install -e .`
 * check `setup.cfg` to apply to proper [PyPI classifiers](https://pypi.org/classifiers/)
 * choose a [license](https://choosealicense.com/) for the project
 * remove `tox.ini` and `tests/` if you want to remove tests
