@@ -1,44 +1,18 @@
-import io
-import os
-import re
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-from setuptools import find_packages
-from setuptools import setup
+import setuptools
 
-
-def read(filename):
-    filename = os.path.join(os.path.dirname(__file__), filename)
-    text_type = type(u"")
-    with io.open(filename, mode="r", encoding='utf-8') as fd:
-        return re.sub(text_type(r':[a-z]+:`~?(.*?)`'), text_type(r'``\1``'), fd.read())
-
-
-setup(
-    name="{{ cookiecutter.package_name }}",
-    version="{{ cookiecutter.package_version }}",
-    url="{{ cookiecutter.package_url }}",
-    license='MIT',
-
-    author="{{ cookiecutter.author_name }}",
-    author_email="{{ cookiecutter.author_email }}",
-
-    description="{{ cookiecutter.package_description }}",
-    long_description=read("README.rst"),
-
-    packages=find_packages(exclude=('tests',)),
-
-    install_requires=[],
-
-    classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-    ],
-)
+setuptools.setup(
+    setup_requires=['pbr>=5.3.0'],
+    pbr=True)
