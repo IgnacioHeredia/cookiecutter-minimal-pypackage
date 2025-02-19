@@ -5,5 +5,8 @@
     "package_name": "cookiecutter_minimal_pypackage",
     "package_description": "An opinionated, minimal cookiecutter template for Python packages",
     "package_version": "0.1.0",
-    "display_badges": true
+    "display_badges": true,
+    "_copy_without_render": [
+        ".github/workflows/*"
+    ]
 }
